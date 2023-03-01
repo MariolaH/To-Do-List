@@ -1,14 +1,16 @@
 import { Button } from "bootstrap";
 
 function ToDoMain() {
-  let name = "mariola";
   return (
     <div>
       {/* header - To Do List */}
       <header />
 
       {/* toDoList - input bar with button */}
-      <toDoList />
+      <toDoInput />
+
+      {/* list that will render with all the items */}
+      <listItem />
 
       {/* all/active/completed */}
       <buttonBar />

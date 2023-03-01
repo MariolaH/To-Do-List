@@ -1,5 +1,4 @@
 function header() {
-    let name = "mariola";
     return (
      
   <></>
