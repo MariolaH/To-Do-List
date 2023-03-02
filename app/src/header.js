@@ -1,4 +1,4 @@
-function Header({setTitle}) {
+function Header() {
     return (
      
   <h1> My To Do list</h1>
