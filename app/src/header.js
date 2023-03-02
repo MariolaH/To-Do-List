@@ -1,7 +1,7 @@
 function Header() {
     return (
      
-  <h1> My To Do list</h1>
+  <h1><b>My To Do list</b></h1>
     );
   }
   

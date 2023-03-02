@@ -56,11 +56,22 @@ setItems(newItems);
 }
 
   return (
-    <div>
+    <div className="frame" >
+<section class="frame vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center py-5"style={{backgroundColor: "#8FBC8F"}}>
+      <div class="col-sm-4">
+
+
+
       {/* header - To Do List */}
       <Header />
       <input type="text" placeholder="Tasks" onChange={updateInput} />
       <button onClick={handleClick}>Add Task</button>
+
+      </div>
+      <div class="row d-flex justify-content-center align-items-center py-5"style={{backgroundColor: "#8FBC8F"}}>
+<div class="col-lg-3">
       <ul>
         {displayView.map((item) => (
           <li key={item.id}>
@@ -70,7 +81,12 @@ setItems(newItems);
           </li>
             
         ))}
+        
       </ul>
+      </div>
+      </div>
+      <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-sm-4">
       {count}
       {/* all/active/completed */}
       {/* <ButtonBar setView={setView}/> */}
@@ -79,11 +95,17 @@ setItems(newItems);
       <button onClick={() => setView("active")}> Active</button>
       {/* button needs to be connect to listItem... when ListItem button clicked will only generate complete tasks */}
       <button onClick={() => setView("completed")}>Completed</button>
+
+    </div>
+    </div>
+</div>
+</div>
+      </section>
+
+
     </div>
   );
 }
-
-
 
 
 export default ToDoMain;
