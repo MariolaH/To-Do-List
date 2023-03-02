@@ -4,6 +4,8 @@ button {
     font-family: monospace;
     font-size: 15px;
     padding: 10px;
+    border-radius: 30px;
+    margin: 35px;
 
 }
 
@@ -19,4 +21,8 @@ border: 10% black;
 h1 {
     font-family: monospace;
     align-content: center;
+}
+
+.row {
+    border-radius: 20px;
 }

@@ -66,7 +66,7 @@ setItems(newItems);
 
       {/* header - To Do List */}
       <Header />
-      <input type="text" placeholder="Tasks" onChange={updateInput} />
+      <input type="text" placeholder="Tasks" onChange={updateInput} /> 
       <button onClick={handleClick}>Add Task</button>
 
       </div>
