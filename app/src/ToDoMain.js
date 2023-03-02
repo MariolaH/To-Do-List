@@ -1,19 +1,28 @@
 import { Button } from "bootstrap";
+import { useState } from "react";
+import ButtonBar from "./buttonBar";
+import Header from "./header";
+import ListItem from "./listItem";
+import ToDoInput from "./toDoInput";
 
 function ToDoMain() {
+  const [items, setItems] = useState([])
+  console.log(items);
+  const [view, setView] = useState('all')
+  // console.log("View", view);
   return (
     <div>
       {/* header - To Do List */}
-      <header />
+      {/* <Header /> */}
 
       {/* toDoList - input bar with button */}
-      <toDoInput />
+      <ToDoInput setItems={setItems} />
 
       {/* list that will render with all the items */}
-      <listItem />
+      {/* <ListItem items={items} /> */}
 
       {/* all/active/completed */}
-      <buttonBar />
+      <ButtonBar setView={setView}/>
 
 
     </div>

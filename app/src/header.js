@@ -1,10 +1,10 @@
-function header() {
+function Header() {
     return (
      
   <h1> My To Do list</h1>
     );
   }
   
-  export default ToDoMain;
+  export default Header;
 
   // display title of the app

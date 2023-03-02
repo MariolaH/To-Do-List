@@ -1,7 +1,10 @@
-function toDoInput() {
+import { useState } from "react";
+
+function ToDoInput({setItems}) {
   const [inputValue, setInputValue] = useState('');
 
   function handleInputChange(event){
+    console.log(handleInputChange);
     setInputValue(event.target.value);
   }
 
@@ -17,7 +20,7 @@ function toDoInput() {
   
   }
   
-  export default ToDoMain;
+  export default ToDoInput;
 
 //   button 
 //   input line

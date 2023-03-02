@@ -1,17 +1,19 @@
-function buttonBar() {
+function ButtonBar({setView}) {
   return (
    
 <>
-<button onClick={handleClick}> All</button>
-<button onClick={handleClick}> Active</button>
+<button onClick={()=> setView('all') }> All</button>
 
-{/* button needs to be connect to listItem that has been completed */}
-  <button onClick={handleClick}>Completed</button>
+{/* when clicked on will on show items that haven't been completed*/}
+<button onClick={()=> setView('active') }> Active</button>
+
+{/* button needs to be connect to listItem... when ListItem button clicked will only generate complete tasks */}
+  <button onClick={()=> setView('completed') }>Completed</button>
   </>
   );
 }
 
-export default ToDoMain;
+export default ButtonBar;
 
 
 // Buttons (All/Active/Completed)

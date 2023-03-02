@@ -1,9 +1,8 @@
-function listItem() {
-  const [items, setItems] = useState([])
+function ListItem({items}) {
     return (
      
   <ul>
-    {items.map(items => <li key={items}>{items}</li>)}
+    {items.map(item => <li key={item}>{item}</li>)}
 
     {/* button if complete=true then add to complete list... take off active list */}
     <button>{/*checkbox*/}</button>
@@ -12,7 +11,7 @@ function listItem() {
     );
   }
   
-  export default ToDoMain;
+  export default ListItem;
 
 
   
