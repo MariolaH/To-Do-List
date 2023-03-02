@@ -1,7 +1,13 @@
 function buttonBar() {
   return (
    
-<></>
+<>
+<button onClick={handleClick}> All</button>
+<button onClick={handleClick}> Active</button>
+
+{/* button needs to be connect to listItem that has been completed */}
+  <button onClick={handleClick}>Completed</button>
+  </>
   );
 }
 
