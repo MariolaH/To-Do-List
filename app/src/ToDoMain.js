@@ -10,10 +10,11 @@ function ToDoMain() {
   console.log(items);
   const [view, setView] = useState('all')
   // console.log("View", view);
+  // const [title, setTitle] = useState()
   return (
     <div>
       {/* header - To Do List */}
-      {/* <Header /> */}
+      <Header setItems={setTitle} />
 
       {/* toDoList - input bar with button */}
       <ToDoInput setItems={setItems} />
