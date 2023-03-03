@@ -1,20 +1,22 @@
 import { useState } from "react";
 import Header from "./header";
 import "./style.css";
-// import customCursor from '../public/image/flower.svg';
 
 function ToDoMain() {
+  // adds task items to array
   const [items, setItems] = useState([]);
+  // setView initally set to all when page is first rendered
   const [view, setView] = useState("all");
   const [inputValue, setInputValue] = useState("");
+  // counts how many items have been added
   const [count, setCount] = useState(items.length);
 
-  // whatever is inputed into here is getting saved into inputValue
+  // task that is inputed updates my setInputValue string
   function updateInput(event) {
     setInputValue(event.target.value);
     console.log(inputValue);
   }
-  // when click the add button it adds to the input array of items and updates count
+  // when the add task button is clicked going to add to the array (setItems) of items and update count
   function handleClick(event) {
     let array = [
       ...items,
@@ -23,7 +25,7 @@ function ToDoMain() {
     setItems(array);
     setCount(array.length);
   }
-  // filter through views
+  // filter through tasks and display tasks that are either all, active or completed
   let displayView = items;
   if (view === "active") {
     displayView = items.filter((items) => items.status === "active");
@@ -42,16 +44,17 @@ function ToDoMain() {
     newArray.splice(item, 1);
     setItems(newArray);
   }
-// changes the status To Do List 
+  // when checkbox is clicked items that are either complete or active appear
   function changeStatus(event, selectedId) {
     console.log(event.target.checked);
     // making a new array based on items array
     let newItems = items.map((item) => {
-      // loop through (each item to see if its been selected)items(.map) if current items id = selected id completed else leave it alone
+      // loop through each item to see if its been selected)
       if (item.id === selectedId) {
         return {
           ...item,
-           // condition ? expression to execute if the condition is truthy : expression to execute if the condition is falsy
+          // condition ? expression to execute if the condition is truthy : expression to execute if the condition is falsy
+          // if has been checked... mark completed else active
           status: event.target.checked ? "completed" : "active",
         };
       } else {
@@ -78,9 +81,13 @@ function ToDoMain() {
               placeholder="Tasks"
               onChange={updateInput}
             />
-            <button style={{ borderRadius: 10 }} className="custom-cursor"
-             onClick={handleClick}>
-              Add Task
+            <button
+              style={{ borderRadius: 10 }}
+              className="custom-cursor"
+              onClick={handleClick}
+            >
+              {" "}
+              Add Task{" "}
             </button>
           </div>
           <div
@@ -94,19 +101,21 @@ function ToDoMain() {
                     <input
                       className="align-bottom"
                       type="checkbox"
-                      style={{
-                        transform: "scale(2)",
-                      }}
+                      style={{ transform: "scale(2)" }}
                       checked={item.status === "completed"}
                       onChange={(e) => changeStatus(e, item.id)}
                     />{" "}
                     &nbsp;
                     {item.text} &nbsp;&nbsp;&nbsp;&nbsp;
-                    <button style={{ borderRadius: 10 }}  className="custom-cursor" onClick={deleteItem}>
+                    <button
+                      style={{ borderRadius: 10 }}
+                      className="custom-cursor"
+                      onClick={deleteItem}
+                    >
                       {" "}
                       Delete Item{" "}
                     </button>{" "}
-                    &nbsp;
+                    &nbsp;{" "}
                   </li>
                 ))}
               </ul>
@@ -116,29 +125,33 @@ function ToDoMain() {
             <div class="col-sm-4">
               {count}&nbsp;&nbsp;&nbsp;
               {/* all/active/completed */}
-              <button className="custom-cursor"
+              <button
+                className="custom-cursor"
                 style={{ borderRadius: 10 }}
                 onClick={() => setView("all")}
               >
                 {" "}
-                All
+                All Tasks{" "}
               </button>{" "}
               &nbsp;
               {/* when clicked on will on show items that are active*/}
-              <button className="custom-cursor"
+              <button
+                className="custom-cursor"
                 style={{ borderRadius: 10 }}
                 onClick={() => setView("active")}
               >
                 {" "}
-                Active
+                Active Tasks{" "}
               </button>{" "}
               &nbsp;
               {/* shows items that have only been completed */}
-              <button className="custom-cursor"
+              <button
+                className="custom-cursor"
                 style={{ borderRadius: 10 }}
                 onClick={() => setView("completed")}
               >
-                Completed
+                {" "}
+                Completed Tasks
               </button>
             </div>
           </div>
