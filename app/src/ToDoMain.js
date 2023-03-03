@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "./header";
 import "./style.css";
+// import customCursor from '../public/image/flower.svg';
 
 function ToDoMain() {
   const [items, setItems] = useState([]);
@@ -42,7 +43,6 @@ function ToDoMain() {
     setItems(newArray);
   }
 
-
   function changeStatus(event, selectedId) {
     console.log(event.target.checked);
     // making a new array based on items array
@@ -77,7 +77,8 @@ function ToDoMain() {
               placeholder="Tasks"
               onChange={updateInput}
             />
-            <button style={{ borderRadius: 10 }} onClick={handleClick}>
+            <button style={{ borderRadius: 10 }} className="custom-cursor"
+             onClick={handleClick}>
               Add Task
             </button>
           </div>
@@ -85,27 +86,24 @@ function ToDoMain() {
             class="row d-flex justify-content-center align-items-center py-5"
             style={{ backgroundColor: "#8FBC8F" }}
           >
-
-
-
-
             <div class="col-lg-3">
               <ul>
                 {displayView.map((item) => (
                   <li key={item.id}>
-                    <input className="align-bottom"
+                    <input
+                      className="align-bottom"
                       type="checkbox"
                       style={{
-                        transform: "scale(2)" 
+                        transform: "scale(2)",
                       }}
                       checked={item.status === "completed"}
                       onChange={(e) => changeStatus(e, item.id)}
                     />{" "}
                     &nbsp;
                     {item.text} &nbsp;&nbsp;&nbsp;&nbsp;
-                    <button style={{ borderRadius: 10 }} onClick={deleteItem}>
+                    <button style={{ borderRadius: 10 }}  className="custom-cursor" onClick={deleteItem}>
                       {" "}
-                      Delete Item {" "}
+                      Delete Item{" "}
                     </button>{" "}
                     &nbsp;
                   </li>
@@ -117,7 +115,7 @@ function ToDoMain() {
             <div class="col-sm-4">
               {count}&nbsp;&nbsp;&nbsp;
               {/* all/active/completed */}
-              <button
+              <button className="custom-cursor"
                 style={{ borderRadius: 10 }}
                 onClick={() => setView("all")}
               >
@@ -126,7 +124,7 @@ function ToDoMain() {
               </button>{" "}
               &nbsp;
               {/* when clicked on will on show items that are active*/}
-              <button
+              <button className="custom-cursor"
                 style={{ borderRadius: 10 }}
                 onClick={() => setView("active")}
               >
@@ -135,7 +133,7 @@ function ToDoMain() {
               </button>{" "}
               &nbsp;
               {/* shows items that have only been completed */}
-              <button
+              <button className="custom-cursor"
                 style={{ borderRadius: 10 }}
                 onClick={() => setView("completed")}
               >

@@ -4,13 +4,15 @@ button {
     font-family: monospace;
     font-size: 15px;
     padding: 10px;
-    border-radius: 30px;
     margin: 35px;
 
 }
 
 ul {
     list-style-type: none;
+}
+li {
+    font-family: monospace;
 }
 
 
@@ -30,3 +32,8 @@ h1 {
 .row {
     border-radius: 20px;
 }
+
+.custom-cursor {
+    cursor: url('./image/flower.svg'), auto !important;
+  }
+  
