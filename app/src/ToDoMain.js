@@ -13,7 +13,7 @@ function ToDoMain() {
     setInputValue(event.target.value);
     console.log(inputValue);
   }
-  // when click add button adding to the input to array of items and updating count
+  // when click the add button it adds to the input array of items and updates count
   function handleClick(event) {
     let array = [
       ...items,
