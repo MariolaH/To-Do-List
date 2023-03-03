@@ -42,7 +42,7 @@ function ToDoMain() {
     newArray.splice(item, 1);
     setItems(newArray);
   }
-
+// changes the status To Do List 
   function changeStatus(event, selectedId) {
     console.log(event.target.checked);
     // making a new array based on items array
@@ -51,6 +51,7 @@ function ToDoMain() {
       if (item.id === selectedId) {
         return {
           ...item,
+           // condition ? expression to execute if the condition is truthy : expression to execute if the condition is falsy
           status: event.target.checked ? "completed" : "active",
         };
       } else {

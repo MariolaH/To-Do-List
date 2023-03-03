@@ -33,6 +33,7 @@ h1 {
     border-radius: 20px;
 }
 
+/* bootstrap is overwriting the css so needed to add !important for the svg css custom cursor to work */
 .custom-cursor {
     cursor: url('./image/flower.svg'), auto !important;
   }
