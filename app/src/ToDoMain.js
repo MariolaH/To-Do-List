@@ -41,10 +41,13 @@ function ToDoMain() {
     newArray.splice(item, 1);
     setItems(newArray);
   }
+
+
   function changeStatus(event, selectedId) {
     console.log(event.target.checked);
+    // making a new array based on items array
     let newItems = items.map((item) => {
-      // loop through items(.map) if current items id = selected id completed else leave it alone
+      // loop through (each item to see if its been selected)items(.map) if current items id = selected id completed else leave it alone
       if (item.id === selectedId) {
         return {
           ...item,
@@ -54,6 +57,7 @@ function ToDoMain() {
         return item;
       }
     });
+    // reset items array to new array
     setItems(newItems);
   }
 
@@ -81,11 +85,15 @@ function ToDoMain() {
             class="row d-flex justify-content-center align-items-center py-5"
             style={{ backgroundColor: "#8FBC8F" }}
           >
+
+
+
+
             <div class="col-lg-3">
               <ul>
                 {displayView.map((item) => (
                   <li key={item.id}>
-                    <input
+                    <input className="align-bottom"
                       type="checkbox"
                       style={{
                         transform: "scale(2)" 
@@ -109,7 +117,6 @@ function ToDoMain() {
             <div class="col-sm-4">
               {count}&nbsp;&nbsp;&nbsp;
               {/* all/active/completed */}
-              {/* <ButtonBar setView={setView}/> */}
               <button
                 style={{ borderRadius: 10 }}
                 onClick={() => setView("all")}
@@ -118,7 +125,7 @@ function ToDoMain() {
                 All
               </button>{" "}
               &nbsp;
-              {/* when clicked on will on show items that haven't been completed*/}
+              {/* when clicked on will on show items that are active*/}
               <button
                 style={{ borderRadius: 10 }}
                 onClick={() => setView("active")}
@@ -127,7 +134,7 @@ function ToDoMain() {
                 Active
               </button>{" "}
               &nbsp;
-              {/* button needs to be connect to listItem... when ListItem button clicked will only generate complete tasks */}
+              {/* shows items that have only been completed */}
               <button
                 style={{ borderRadius: 10 }}
                 onClick={() => setView("completed")}

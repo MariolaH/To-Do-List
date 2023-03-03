@@ -9,15 +9,18 @@ button {
 
 }
 
+ul {
+    list-style-type: none;
+}
+
 
 input {
     padding-right: 50 px;
     padding-inline-start: 20px;
     height: 50px;
+    font-family: monospace;
 }
-.frame {
-border: 10% black;
-}
+
 
 h1 {
     font-family: monospace;
