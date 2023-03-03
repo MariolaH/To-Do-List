@@ -3,7 +3,7 @@ import Header from "./header";
 import "./style.css";
 
 function ToDoMain() {
-  // adds task items to array
+  // adds task items to array = set to empty array
   const [items, setItems] = useState([]);
   // setView initally set to all when page is first rendered
   const [view, setView] = useState("all");
@@ -11,7 +11,7 @@ function ToDoMain() {
   // counts how many items have been added
   const [count, setCount] = useState(items.length);
 
-  // task that is inputed updates my setInputValue string
+  // task that is inputed updates setInputValue string
   function updateInput(event) {
     setInputValue(event.target.value);
     console.log(inputValue);
@@ -41,6 +41,7 @@ function ToDoMain() {
     // console.log('deleteItem')
     // copy of array
     let newArray = [...items];
+    // .splice either adds or removes.. here is deletes an item   
     newArray.splice(item, 1);
     setItems(newArray);
   }
@@ -67,7 +68,7 @@ function ToDoMain() {
 
   return (
     <div className="frame">
-      <div class="container py-5 h-100">
+      <div class="container py-5 h-100" >
         <div
           class="row d-flex justify-content-center align-items-center py-5"
           style={{ backgroundColor: "#8FBC8F" }}
@@ -78,6 +79,7 @@ function ToDoMain() {
             <input
               style={{ marginRight: 10, borderRadius: 5, borderStyle: "solid" }}
               type="text"
+              
               placeholder="Tasks"
               onChange={updateInput}
             />
@@ -94,7 +96,7 @@ function ToDoMain() {
             class="row d-flex justify-content-center align-items-center py-5"
             style={{ backgroundColor: "#8FBC8F" }}
           >
-            <div class="col-lg-3">
+          <div class="col-lg-3">
               <ul>
                 {displayView.map((item) => (
                   <li key={item.id}>
@@ -119,7 +121,7 @@ function ToDoMain() {
                   </li>
                 ))}
               </ul>
-            </div>
+          </div>
           </div>
           <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-sm-4">
