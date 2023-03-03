@@ -88,7 +88,7 @@ function ToDoMain() {
                     <input
                       type="checkbox"
                       style={{
-                        transform: "scale(2)",
+                        transform: "scale(2)" 
                       }}
                       checked={item.status === "completed"}
                       onChange={(e) => changeStatus(e, item.id)}
@@ -97,7 +97,7 @@ function ToDoMain() {
                     {item.text} &nbsp;&nbsp;&nbsp;&nbsp;
                     <button style={{ borderRadius: 10 }} onClick={deleteItem}>
                       {" "}
-                      X{" "}
+                      Delete Item {" "}
                     </button>{" "}
                     &nbsp;
                   </li>
