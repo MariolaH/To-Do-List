@@ -14,7 +14,7 @@
 }
 
 .frame {
-    margin: 2rem;
+    margin: 1rem;
 }
 
 button {
@@ -23,6 +23,7 @@ button {
     font-size: 15px;
     padding: 10px;
     margin: 35px;
+    color: black;
 
 }
 
