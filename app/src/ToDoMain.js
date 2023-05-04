@@ -68,18 +68,17 @@ function ToDoMain() {
 
   return (
     <div className="frame">
-      <div class="container py-5 h-100" >
+      <div class="container py-5 h-100">
         <div
           class="row d-flex justify-content-center align-items-center py-5"
-          style={{ backgroundColor: "#8FBC8F" }}
+          style={{ backgroundColor: "#8FBC8F", textAlign: "center" }}
         >
-          <div class="col-sm-4">
+          <div class="col-sm-6 col-md-6 col-lg-4">
             {/* header - To Do List */}
             <Header />
             <input
               style={{ marginRight: 10, borderRadius: 5, borderStyle: "solid" }}
               type="text"
-              
               placeholder="Tasks"
               onChange={updateInput}
             />
@@ -96,7 +95,7 @@ function ToDoMain() {
             class="row d-flex justify-content-center align-items-center py-5"
             style={{ backgroundColor: "#8FBC8F" }}
           >
-          <div class="col-lg-3">
+            <div class="col-lg-3">
               <ul>
                 {displayView.map((item) => (
                   <li key={item.id}>
@@ -121,10 +120,13 @@ function ToDoMain() {
                   </li>
                 ))}
               </ul>
+            </div>
           </div>
-          </div>
-          <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-sm-4">
+          <div
+            class="row d-flex justify-content-center align-items-center h-100"
+            style={{ textAlign: "center" }}
+          >
+            <div class="col-sm-6">
               {count}&nbsp;&nbsp;&nbsp;
               {/* all/active/completed */}
               <button
